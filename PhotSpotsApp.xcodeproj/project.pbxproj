@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4DB944C424DEB09600C263AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB944C324DEB09600C263AB /* CoreLocation.framework */; };
 		4DD647CA24DE939500150AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD647C924DE939500150AE6 /* AppDelegate.swift */; };
 		4DD647CC24DE939500150AE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD647CB24DE939500150AE6 /* SceneDelegate.swift */; };
 		4DD647CE24DE939500150AE6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD647CD24DE939500150AE6 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4DB944C324DEB09600C263AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DD647C624DE939500150AE6 /* PhotSpotsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotSpotsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD647C924DE939500150AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4DD647CB24DE939500150AE6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +33,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DB944C424DEB09600C263AB /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4DB944C224DEB09500C263AB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4DB944C324DEB09600C263AB /* CoreLocation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4DD647BD24DE939400150AE6 = {
 			isa = PBXGroup;
 			children = (
 				4DD647C824DE939500150AE6 /* PhotSpotsApp */,
 				4DD647C724DE939500150AE6 /* Products */,
+				4DB944C224DEB09500C263AB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
