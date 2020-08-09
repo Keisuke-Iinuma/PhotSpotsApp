@@ -22,10 +22,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿型写真スポット共有アプリ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzH-CA-r9p">
-                                <rect key="frame" x="107" y="231" width="200" height="13"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="waA-Kq-tZj"/>
-                                </constraints>
+                                <rect key="frame" x="116" y="231" width="182" height="13"/>
                                 <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="13"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
