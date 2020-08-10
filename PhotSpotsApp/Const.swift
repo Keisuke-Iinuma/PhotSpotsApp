@@ -9,17 +9,17 @@
 import UIKit
 import Foundation
 
-class Const: UIViewController {
+struct Const {
+    static let ImagePath = "images"
+    static let PostPath = "posts"
+}
 
+class ConstViewController: UITabBarController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-    }
-
-    struct Const {
-        static let ImagePath = "images"
-        static let PostPath = "posts"
     }
 
     /*

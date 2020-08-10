@@ -37,13 +37,13 @@
                                     <constraint firstAttribute="width" constant="50" id="cug-WE-21K"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA9-CA-lu7">
-                                <rect key="frame" x="157" y="776" width="100" height="100"/>
+                            <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vA9-CA-lu7">
+                                <rect key="frame" x="177" y="816" width="60" height="60"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="QA0-Qx-yOx"/>
-                                    <constraint firstAttribute="height" constant="100" id="sy9-lU-efB"/>
+                                    <constraint firstAttribute="width" constant="60" id="QA0-Qx-yOx"/>
+                                    <constraint firstAttribute="height" constant="60" id="sy9-lU-efB"/>
                                 </constraints>
-                                <state key="normal" image="363"/>
+                                <state key="normal" image="icons8-カメラを追加-80"/>
                                 <connections>
                                     <segue destination="bxd-V7-949" kind="show" id="Mjw-Tc-Ko9"/>
                                 </connections>
@@ -89,10 +89,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JQt-T4-vY9">
-                                <rect key="frame" x="82" y="100" width="250" height="40"/>
+                                <rect key="frame" x="107" y="100" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="8wJ-dA-fRh"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="hvx-fi-wam"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="hvx-fi-wam"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="カメラ" backgroundImage="btn057_10">
@@ -103,10 +103,10 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WS3-aA-1QI">
-                                <rect key="frame" x="82" y="170" width="250" height="40"/>
+                                <rect key="frame" x="107" y="170" width="200" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="hZ8-ot-K4E"/>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="pgE-uz-1nZ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="pgE-uz-1nZ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <state key="normal" title="ライブラリ" backgroundImage="btn057_10">
@@ -117,9 +117,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="biu-yV-kHq">
-                                <rect key="frame" x="82" y="240" width="250" height="40"/>
+                                <rect key="frame" x="107" y="240" width="200" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="I0k-g4-YJz"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="200" id="I0k-g4-YJz"/>
                                     <constraint firstAttribute="height" constant="40" id="gE2-xQ-M67"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -265,6 +265,7 @@
                     <navigationItem key="navigationItem" id="xSn-kd-tyP"/>
                     <connections>
                         <outlet property="image" destination="eCM-5W-c0q" id="zTI-hT-UNt"/>
+                        <outlet property="imageView" destination="eCM-5W-c0q" id="x8k-GQ-7SP"/>
                         <outlet property="textField1" destination="eL7-fD-EkO" id="SWT-eO-dnm"/>
                         <outlet property="textField2" destination="1cA-av-Hud" id="A0A-BA-iz2"/>
                     </connections>
@@ -275,9 +276,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="363" width="400" height="400"/>
         <image name="3ydt1" width="245" height="65"/>
         <image name="btn057_10" width="180" height="30"/>
+        <image name="icons8-カメラを追加-80" width="80" height="80"/>
         <image name="sozai_cman_jp_20200809144001" width="47" height="81"/>
     </resources>
 </document>
