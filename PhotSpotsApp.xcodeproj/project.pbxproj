@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4D69D57B24E3E8F3009E2110 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69D57A24E3E8F2009E2110 /* DetailController.swift */; };
 		4DB944C424DEB09600C263AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB944C324DEB09600C263AB /* CoreLocation.framework */; };
 		4DD647CA24DE939500150AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD647C924DE939500150AE6 /* AppDelegate.swift */; };
 		4DD647CC24DE939500150AE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD647CB24DE939500150AE6 /* SceneDelegate.swift */; };
@@ -26,6 +27,7 @@
 		07CC68B2880D7D6C56239CB0 /* Pods-PhotSpotsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotSpotsApp.debug.xcconfig"; path = "Target Support Files/Pods-PhotSpotsApp/Pods-PhotSpotsApp.debug.xcconfig"; sourceTree = "<group>"; };
 		26209693D2E49AE73B00BE10 /* Pods-PhotSpotsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotSpotsApp.release.xcconfig"; path = "Target Support Files/Pods-PhotSpotsApp/Pods-PhotSpotsApp.release.xcconfig"; sourceTree = "<group>"; };
 		2FE3A14838E35F54C7B07B64 /* Pods_PhotSpotsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotSpotsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D69D57A24E3E8F2009E2110 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		4DB944C324DEB09600C263AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DD647C624DE939500150AE6 /* PhotSpotsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotSpotsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD647C924DE939500150AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				4DE18EDB24E00597001C8820 /* ImageSelectController.swift */,
 				4DE18EDD24E01B4E001C8820 /* PostViewController.swift */,
 				4DE18EE124E02C7F001C8820 /* Const.swift */,
+				4D69D57A24E3E8F2009E2110 /* DetailController.swift */,
 				4DD647CF24DE939500150AE6 /* Main.storyboard */,
 				4DD647D224DE939900150AE6 /* Assets.xcassets */,
 				4DD647D424DE939900150AE6 /* LaunchScreen.storyboard */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD647CE24DE939500150AE6 /* ViewController.swift in Sources */,
+				4D69D57B24E3E8F3009E2110 /* DetailController.swift in Sources */,
 				4DE18EDC24E00597001C8820 /* ImageSelectController.swift in Sources */,
 				4DD647CA24DE939500150AE6 /* AppDelegate.swift in Sources */,
 				4DD647CC24DE939500150AE6 /* SceneDelegate.swift in Sources */,
