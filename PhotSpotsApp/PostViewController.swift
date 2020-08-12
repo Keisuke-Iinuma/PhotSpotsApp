@@ -13,10 +13,14 @@ import SVProgressHUD
 class PostViewController: UIViewController {
     
     var image: UIImage!
-
+    
     @IBOutlet weak var imageView: UIImageView!
-    @IBOutlet weak var textField1: UITextField!
-    @IBOutlet weak var textField2: UITextField!
+    @IBOutlet weak var textField: UITextField!
+    
+    @IBAction func test(_ sender: Any) {
+        
+        
+    }
     
     @IBAction func handlePostButton(_ sender: Any) {
         // 画像をJPEG形式に変換する
@@ -42,40 +46,39 @@ class PostViewController: UIViewController {
             let name = Auth.auth().currentUser?.displayName
             let postDic = [
                 "name": name!,
-                "caption": self.textField1.text!,
+                "caption": self.textField.text!,
                 "date": FieldValue.serverTimestamp(),
                 ] as [String : Any]
             postRef.setData(postDic)
             // HUDで投稿完了を表示する
             SVProgressHUD.showSuccess(withStatus: "投稿しました")
             // 投稿処理が完了したので先頭画面に戻る
-           UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
-        }
+            UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+            }
     }
     
     @IBAction func handleCancelButton(_ sender: Any) {
         // 加工画面に戻る
         self.dismiss(animated: true, completion: nil)
+        //self.navigationController?.ImageSelectController(animated: true)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
+        // Do any additional setup after loading the view.
         // 受け取った画像をImageViewに設定する
         imageView.image = image
     }
     
-
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

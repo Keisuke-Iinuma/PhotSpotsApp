@@ -52,6 +52,12 @@ class ImageSelectController: UIViewController, UIImagePickerControllerDelegate, 
             // あとでCLImageEditorライブラリで加工する
             print("DEBUG_PRINT: image = \(image)")
             
+            // CLImageEditorにimageを渡して、加工画面を起動する。
+            let editor = CLImageEditor(image: image)!
+            editor.delegate = self
+            editor.modalPresentationStyle = .fullScreen
+            picker.present(editor, animated: true, completion: nil)
+            
         }
     }
     

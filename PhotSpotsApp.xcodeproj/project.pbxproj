@@ -17,13 +17,15 @@
 		4DE18ED424DF7E9E001C8820 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE18ED324DF7E9D001C8820 /* MapKit.framework */; };
 		4DE18EDC24E00597001C8820 /* ImageSelectController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE18EDB24E00597001C8820 /* ImageSelectController.swift */; };
 		4DE18EDE24E01B4E001C8820 /* PostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE18EDD24E01B4E001C8820 /* PostViewController.swift */; };
-		4DE18EE024E022D7001C8820 /* GoogleService-Info (1).plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE18EDF24E022D7001C8820 /* GoogleService-Info (1).plist */; };
 		4DE18EE224E02C7F001C8820 /* Const.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DE18EE124E02C7F001C8820 /* Const.swift */; };
-		6AAC0B96EC001DB2F55F7370 /* Pods_PhotSpotsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 878A46AEFA54492D2B601376 /* Pods_PhotSpotsApp.framework */; };
+		4DE18EE624E33609001C8820 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DE18EE524E33608001C8820 /* GoogleService-Info.plist */; };
+		C37BA468CAF47E26A6FD925C /* Pods_PhotSpotsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FE3A14838E35F54C7B07B64 /* Pods_PhotSpotsApp.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2F7F5AA64E8064FA514DA160 /* Pods-PhotSpotsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotSpotsApp.release.xcconfig"; path = "Target Support Files/Pods-PhotSpotsApp/Pods-PhotSpotsApp.release.xcconfig"; sourceTree = "<group>"; };
+		07CC68B2880D7D6C56239CB0 /* Pods-PhotSpotsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotSpotsApp.debug.xcconfig"; path = "Target Support Files/Pods-PhotSpotsApp/Pods-PhotSpotsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		26209693D2E49AE73B00BE10 /* Pods-PhotSpotsApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotSpotsApp.release.xcconfig"; path = "Target Support Files/Pods-PhotSpotsApp/Pods-PhotSpotsApp.release.xcconfig"; sourceTree = "<group>"; };
+		2FE3A14838E35F54C7B07B64 /* Pods_PhotSpotsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotSpotsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DB944C324DEB09600C263AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DD647C624DE939500150AE6 /* PhotSpotsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotSpotsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD647C924DE939500150AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,10 +38,8 @@
 		4DE18ED324DF7E9D001C8820 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		4DE18EDB24E00597001C8820 /* ImageSelectController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageSelectController.swift; sourceTree = "<group>"; };
 		4DE18EDD24E01B4E001C8820 /* PostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewController.swift; sourceTree = "<group>"; };
-		4DE18EDF24E022D7001C8820 /* GoogleService-Info (1).plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info (1).plist"; path = "../../../../Downloads/GoogleService-Info (1).plist"; sourceTree = "<group>"; };
 		4DE18EE124E02C7F001C8820 /* Const.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Const.swift; sourceTree = "<group>"; };
-		878A46AEFA54492D2B601376 /* Pods_PhotSpotsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PhotSpotsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9251AD3DF0422B1329914068 /* Pods-PhotSpotsApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PhotSpotsApp.debug.xcconfig"; path = "Target Support Files/Pods-PhotSpotsApp/Pods-PhotSpotsApp.debug.xcconfig"; sourceTree = "<group>"; };
+		4DE18EE524E33608001C8820 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,7 +49,7 @@
 			files = (
 				4DE18ED424DF7E9E001C8820 /* MapKit.framework in Frameworks */,
 				4DB944C424DEB09600C263AB /* CoreLocation.framework in Frameworks */,
-				6AAC0B96EC001DB2F55F7370 /* Pods_PhotSpotsApp.framework in Frameworks */,
+				C37BA468CAF47E26A6FD925C /* Pods_PhotSpotsApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,7 +61,7 @@
 			children = (
 				4DE18ED324DF7E9D001C8820 /* MapKit.framework */,
 				4DB944C324DEB09600C263AB /* CoreLocation.framework */,
-				878A46AEFA54492D2B601376 /* Pods_PhotSpotsApp.framework */,
+				2FE3A14838E35F54C7B07B64 /* Pods_PhotSpotsApp.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -97,7 +97,7 @@
 				4DD647D224DE939900150AE6 /* Assets.xcassets */,
 				4DD647D424DE939900150AE6 /* LaunchScreen.storyboard */,
 				4DD647D724DE939900150AE6 /* Info.plist */,
-				4DE18EDF24E022D7001C8820 /* GoogleService-Info (1).plist */,
+				4DE18EE524E33608001C8820 /* GoogleService-Info.plist */,
 			);
 			path = PhotSpotsApp;
 			sourceTree = "<group>";
@@ -105,8 +105,8 @@
 		BD7270B34AFFF7947EEEBB53 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				9251AD3DF0422B1329914068 /* Pods-PhotSpotsApp.debug.xcconfig */,
-				2F7F5AA64E8064FA514DA160 /* Pods-PhotSpotsApp.release.xcconfig */,
+				07CC68B2880D7D6C56239CB0 /* Pods-PhotSpotsApp.debug.xcconfig */,
+				26209693D2E49AE73B00BE10 /* Pods-PhotSpotsApp.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -118,11 +118,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4DD647DA24DE939900150AE6 /* Build configuration list for PBXNativeTarget "PhotSpotsApp" */;
 			buildPhases = (
-				37A46B7163C33633A32A43AD /* [CP] Check Pods Manifest.lock */,
+				0F7A895C434F37F73E2C4BD3 /* [CP] Check Pods Manifest.lock */,
 				4DD647C224DE939500150AE6 /* Sources */,
 				4DD647C324DE939500150AE6 /* Frameworks */,
 				4DD647C424DE939500150AE6 /* Resources */,
-				AC393BC2D52BBA85F0939C78 /* [CP] Embed Pods Frameworks */,
+				FBB34AE1D73BF75D3F1D6902 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -172,16 +172,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				4DD647D624DE939900150AE6 /* LaunchScreen.storyboard in Resources */,
+				4DE18EE624E33609001C8820 /* GoogleService-Info.plist in Resources */,
 				4DD647D324DE939900150AE6 /* Assets.xcassets in Resources */,
 				4DD647D124DE939500150AE6 /* Main.storyboard in Resources */,
-				4DE18EE024E022D7001C8820 /* GoogleService-Info (1).plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37A46B7163C33633A32A43AD /* [CP] Check Pods Manifest.lock */ = {
+		0F7A895C434F37F73E2C4BD3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -203,7 +203,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AC393BC2D52BBA85F0939C78 /* [CP] Embed Pods Frameworks */ = {
+		FBB34AE1D73BF75D3F1D6902 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -374,7 +374,7 @@
 		};
 		4DD647DB24DE939900150AE6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9251AD3DF0422B1329914068 /* Pods-PhotSpotsApp.debug.xcconfig */;
+			baseConfigurationReference = 07CC68B2880D7D6C56239CB0 /* Pods-PhotSpotsApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -393,7 +393,7 @@
 		};
 		4DD647DC24DE939900150AE6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2F7F5AA64E8064FA514DA160 /* Pods-PhotSpotsApp.release.xcconfig */;
+			baseConfigurationReference = 26209693D2E49AE73B00BE10 /* Pods-PhotSpotsApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
