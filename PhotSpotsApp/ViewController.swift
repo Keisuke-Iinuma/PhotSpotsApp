@@ -52,10 +52,11 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         }
     }
     
+    
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         // 他の画面から segue を使って戻ってきた時に呼ばれる
         let center = mapView.centerCoordinate
-        //let annotation = MKPointAnnotation()
+        let annotation = MKPointAnnotation()
         //ピンにメッセージを付随する
         let result = sendText
         annotation.title = "\(result)"
@@ -66,7 +67,6 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
 }
 
 extension ViewController: MKMapViewDelegate {
-    
     //アノテーションビューを返すメソッド
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -77,7 +77,6 @@ extension ViewController: MKMapViewDelegate {
         var pinView = mapView.dequeueReusableAnnotationView(withIdentifier: reuseId) as? MKPinAnnotationView
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
-            
             //ピンのアニメーションをONにする。
             pinView?.animatesDrop = true
             //吹き出しを表示可能に。
@@ -86,37 +85,50 @@ extension ViewController: MKMapViewDelegate {
             let image = sendImage
             // UIImageView 初期化
             let imageView = UIImageView(image:image)
-            
             imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
             pinView?.detailCalloutAccessoryView = imageView
-            pinView?.rightCalloutAccessoryView = UIButton(type: .infoLight)
-            imageView.contentMode = .scaleAspectFit
             
+            let rightButton = UIButton(type: .infoLight)
+            rightButton.addTarget(self, action: #selector(didClickDetailDisclosure), for: .touchUpInside)
+            pinView?.rightCalloutAccessoryView = rightButton
+            imageView.contentMode = .scaleAspectFit
         }
+            
         else {
             pinView?.annotation = annotation
         }
         return pinView
     }
     
+    @objc func didClickDetailDisclosure(button: UIButton) {
+        print("tap")
+        let detailcontroller = DetailController()
+        present(detailcontroller, animated: true, completion: nil)
+        
+    }
+    
     private func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, rightcalloutAccessoryControlTapped control: UIButton) {
-        
-        let viewController = DetailController() //popoverで表示するViewController
-        viewController.modalPresentationStyle = .popover
-        viewController.preferredContentSize = viewController.view.frame.size
-        
-        let presentationController = viewController.popoverPresentationController
-        presentationController?.delegate = self
-        presentationController?.permittedArrowDirections = .up
-        //presentationController?.UIButton = sender
-        
-        present(viewController, animated: true, completion: nil)
     }
 }
 
-extension ViewController: UIPopoverPresentationControllerDelegate {
-    func adaptivePresentationStyle(for controller: UIPresentationController,
-                                   traitCollection: UITraitCollection) -> UIModalPresentationStyle {
-        return .none
-    }
-}
+/*private func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, rightcalloutAccessoryControlTapped control: UIButton) {
+ 
+ let viewController = DetailController() //popoverで表示するViewController
+ viewController.modalPresentationStyle = .popover
+ viewController.preferredContentSize = viewController.view.frame.size
+ 
+ let presentationController = viewController.popoverPresentationController
+ presentationController?.delegate = self
+ presentationController?.permittedArrowDirections = .up
+ //presentationController?.UIButton = sender
+ 
+ present(viewController, animated: true, completion: nil)
+ }
+ }
+ 
+ extension ViewController: UIPopoverPresentationControllerDelegate {
+ func adaptivePresentationStyle(for controller: UIPresentationController,
+ traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+ return .none
+ }*/
+
