@@ -10,7 +10,7 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class ViewController: UIViewController , CLLocationManagerDelegate  {
+class ViewController: UIViewController , CLLocationManagerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var imageView: UIImageView!
@@ -22,16 +22,15 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
     var sendText:String = ""
     var sendImage:UIImage!
     //var sendImage = UIImage()
+    let annotation = MKPointAnnotation()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //表示範囲
         //let span = MKCoordinateSpan (latitudeDelta: 0.05, longitudeDelta: 0.05)
-        
         self.mapView.showsUserLocation = true
-        self.mapView.setUserTrackingMode(.follow, animated: true)
-        self.mapView.userTrackingMode = MKUserTrackingMode.follow
+        self.mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
         
         //デリゲート先に自分を設定する。
         mapView.delegate = self
@@ -51,13 +50,12 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
             // 位置情報の取得を開始
             locationManager.startUpdatingLocation()
         }
-        
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         // 他の画面から segue を使って戻ってきた時に呼ばれる
         let center = mapView.centerCoordinate
-        let annotation = MKPointAnnotation()
+        //let annotation = MKPointAnnotation()
         //ピンにメッセージを付随する
         let result = sendText
         annotation.title = "\(result)"
@@ -67,7 +65,8 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
     }
 }
 
-extension ViewController: MKMapViewDelegate{
+extension ViewController: MKMapViewDelegate {
+    
     //アノテーションビューを返すメソッド
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -83,14 +82,14 @@ extension ViewController: MKMapViewDelegate{
             pinView?.animatesDrop = true
             //吹き出しを表示可能に。
             pinView?.canShowCallout = true
-            
             // UIImage インスタンスの生成
             let image = sendImage
             // UIImageView 初期化
             let imageView = UIImageView(image:image)
-            imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+            
+            imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
             pinView?.detailCalloutAccessoryView = imageView
-            //pinView?.rightCalloutAccessoryView = imageView
+            pinView?.rightCalloutAccessoryView = UIButton(type: .infoLight)
             imageView.contentMode = .scaleAspectFit
             
         }
@@ -100,12 +99,24 @@ extension ViewController: MKMapViewDelegate{
         return pinView
     }
     
-    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
-           for view in views {
-            view.rightCalloutAccessoryView = UIButton(type: UIButton.ButtonType.detailDisclosure)
-            
-            view.leftCalloutAccessoryView = UIButton(type: UIButton.ButtonType.detailDisclosure)
-            
-           }
+    private func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, rightcalloutAccessoryControlTapped control: UIButton) {
+        
+        let viewController = DetailController() //popoverで表示するViewController
+        viewController.modalPresentationStyle = .popover
+        viewController.preferredContentSize = viewController.view.frame.size
+        
+        let presentationController = viewController.popoverPresentationController
+        presentationController?.delegate = self
+        presentationController?.permittedArrowDirections = .up
+        //presentationController?.UIButton = sender
+        
+        present(viewController, animated: true, completion: nil)
+    }
+}
+
+extension ViewController: UIPopoverPresentationControllerDelegate {
+    func adaptivePresentationStyle(for controller: UIPresentationController,
+                                   traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+        return .none
     }
 }

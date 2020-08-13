@@ -15,13 +15,13 @@ class DetailController: UIViewController {
     @IBOutlet weak var likeButton: UIButton!
     @IBOutlet weak var likeLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    @IBOutlet weak var captionLabel: UILabel!
-    @IBAction func report(_ sender: Any) {
-    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+
     }
     
 
