@@ -20,7 +20,8 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
     
     var pinView:MKPinAnnotationView!
     var sendText:String = ""
-    var sendImage:UIImageView
+    var sendImage:UIImage!
+    //var sendImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +51,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
             // 位置情報の取得を開始
             locationManager.startUpdatingLocation()
         }
+        
     }
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
@@ -66,7 +68,6 @@ class ViewController: UIViewController , CLLocationManagerDelegate  {
 }
 
 extension ViewController: MKMapViewDelegate{
-    
     //アノテーションビューを返すメソッド
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -78,71 +79,33 @@ extension ViewController: MKMapViewDelegate{
         if pinView == nil {
             pinView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: reuseId)
             
-            pinView?.animatesDrop = true
             //ピンのアニメーションをONにする。
             pinView?.animatesDrop = true
             //吹き出しを表示可能に。
             pinView?.canShowCallout = true
             
-            let customerImage = sendImage
-            let rightImageView = UIImageView(image: UIImage(named: "customerImage"))
-            rightImageView.frame = CGRect(x: 0, y: 200, width: 100, height: 100)
-            rightImageView.contentMode = .scaleAspectFit
-            pinView?.detailCalloutAccessoryView = rightImageView
+            // UIImage インスタンスの生成
+            let image = sendImage
+            // UIImageView 初期化
+            let imageView = UIImageView(image:image)
+            imageView.frame = CGRect(x: 0, y: 0, width: 200, height: 50)
+            pinView?.detailCalloutAccessoryView = imageView
+            //pinView?.rightCalloutAccessoryView = imageView
+            imageView.contentMode = .scaleAspectFit
             
-            
-            /*let button = UIButton()
-            button.frame = CGRect(x:0,y:0,width:100,height:40)
-            button.setTitle("ここに行く", for: .normal)
-            button.setTitleColor(UIColor.white, for: .normal)
-            button.backgroundColor = UIColor.darkGray
-            button.addTarget(self, action: #selector(sendLocation), for: .touchUpInside)
-            //右側にボタンを追加
-            pinView?.rightCalloutAccessoryView = button*/
         }
         else {
             pinView?.annotation = annotation
         }
         return pinView
     }
-}
-
-//目的地に設定ボタン押下時の処理
-/*@objc func sendLocation(){
     
-    /*let sourcePlaceMark = MKPlacemark(coordinate: UserLocation)
-     let destinationPlaceMark = MKPlacemark(coordinate: destinationLocation)
-     
-     let directionRequest = MKDirections.Request()
-     directionRequest.source = MKMapItem(placemark: sourcePlaceMark)
-     directionRequest.destination = MKMapItem(placemark: destinationPlaceMark)
-     directionRequest.transportType = .automobile
-     
-     let directions = MKDirections(request: directionRequest)
-     directions.calculate { (response, error) in
-     guard let directionResonse = response else {
-     if let error = error {
-     print("we have error getting directions==\(error.localizedDescription)")
-     }
-     return
-     }
-     //　ルートを追加
-     let route = directionResonse.routes[0]
-     self.mapView.addOverlay(route.polyline, level: .aboveRoads)
-     //　縮尺を設定
-     let rect = route.polyline.boundingMapRect
-     self.mapView.setRegion(MKCoordinateRegion(rect), animated: true)
-     }
-     
-     //set delegate for mapview
-     self.mapView.delegate = self
-     }
-     
-     func mapView(_ mapView: MKMapView, rendererFor overlay: MKOverlay) -> MKOverlayRenderer {
-     let renderer = MKPolylineRenderer(overlay: overlay)
-     renderer.strokeColor = UIColor.blue
-     renderer.lineWidth = 4.0
-     return renderer*/
-    
+    func mapView(_ mapView: MKMapView, didAdd views: [MKAnnotationView]) {
+           for view in views {
+            view.rightCalloutAccessoryView = UIButton(type: UIButton.ButtonType.detailDisclosure)
+            
+            view.leftCalloutAccessoryView = UIButton(type: UIButton.ButtonType.detailDisclosure)
+            
+           }
+    }
 }
-*/
