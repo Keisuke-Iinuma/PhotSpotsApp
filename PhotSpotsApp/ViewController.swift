@@ -66,6 +66,7 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
             self.present(loginViewController!, animated: true, completion: nil)
         }
     }
+    
     /*override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
      // セグエのポップオーバー接続先を取得
      let popoverCtrl = segue.destination.popoverPresentationController

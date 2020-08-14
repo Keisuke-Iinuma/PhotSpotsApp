@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import MapKit
 import Firebase
 import SVProgressHUD
 
 class PostViewController: UIViewController , UITextFieldDelegate {
     
     var image: UIImage!
+    let annotation = MKPointAnnotation()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -23,6 +25,7 @@ class PostViewController: UIViewController , UITextFieldDelegate {
         // 画像と投稿データの保存場所を定義する
         let postRef = Firestore.firestore().collection(Const.PostPath).document()
         let imageRef = Storage.storage().reference().child(Const.ImagePath).child(postRef.documentID + ".jpg")
+        //let annotationRef = 
         // HUDで投稿処理中の表示を開始
         SVProgressHUD.show()
         // Storageに画像をアップロードする
@@ -32,7 +35,7 @@ class PostViewController: UIViewController , UITextFieldDelegate {
             if error != nil {
                 // 画像のアップロード失敗
                 print(error!)
-                SVProgressHUD.showError(withStatus: "画像のアップロードが失敗しました")
+                SVProgressHUD.showError(withStatus: "スポットの投稿に失敗しました")
                 // 投稿処理をキャンセルし、先頭画面に戻る
                 UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
                 return
@@ -43,10 +46,11 @@ class PostViewController: UIViewController , UITextFieldDelegate {
                 "name": name!,
                 "caption": self.textField.text!,
                 "date": FieldValue.serverTimestamp(),
+                "annotaion": MKPointAnnotation()
                 ] as [String : Any]
             postRef.setData(postDic)
             // HUDで投稿完了を表示する
-            SVProgressHUD.showSuccess(withStatus: "投稿しました")
+            SVProgressHUD.showSuccess(withStatus: "投稿しました!")
             // 投稿処理が完了したので先頭画面に戻る
             UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
             
