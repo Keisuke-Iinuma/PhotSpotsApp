@@ -10,6 +10,8 @@
 		4D69D57B24E3E8F3009E2110 /* DetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D69D57A24E3E8F2009E2110 /* DetailController.swift */; };
 		4DADEAA324E64C1E006317D2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4DADEAA224E64C1E006317D2 /* GoogleService-Info.plist */; };
 		4DADEAA524E64F88006317D2 /* PostData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADEAA424E64F88006317D2 /* PostData.swift */; };
+		4DADEAA724E67FF9006317D2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADEAA624E67FF9006317D2 /* LoginViewController.swift */; };
+		4DADEAA924E69E09006317D2 /* AccountMakeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DADEAA824E69E08006317D2 /* AccountMakeViewController.swift */; };
 		4DB944C424DEB09600C263AB /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB944C324DEB09600C263AB /* CoreLocation.framework */; };
 		4DD647CA24DE939500150AE6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD647C924DE939500150AE6 /* AppDelegate.swift */; };
 		4DD647CC24DE939500150AE6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DD647CB24DE939500150AE6 /* SceneDelegate.swift */; };
@@ -31,6 +33,8 @@
 		4D69D57A24E3E8F2009E2110 /* DetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailController.swift; sourceTree = "<group>"; };
 		4DADEAA224E64C1E006317D2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		4DADEAA424E64F88006317D2 /* PostData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostData.swift; sourceTree = "<group>"; };
+		4DADEAA624E67FF9006317D2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4DADEAA824E69E08006317D2 /* AccountMakeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMakeViewController.swift; sourceTree = "<group>"; };
 		4DB944C324DEB09600C263AB /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		4DD647C624DE939500150AE6 /* PhotSpotsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PhotSpotsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4DD647C924DE939500150AE6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 				4DE18EE124E02C7F001C8820 /* Const.swift */,
 				4DADEAA424E64F88006317D2 /* PostData.swift */,
 				4D69D57A24E3E8F2009E2110 /* DetailController.swift */,
+				4DADEAA624E67FF9006317D2 /* LoginViewController.swift */,
+				4DADEAA824E69E08006317D2 /* AccountMakeViewController.swift */,
 				4DD647CF24DE939500150AE6 /* Main.storyboard */,
 				4DD647D224DE939900150AE6 /* Assets.xcassets */,
 				4DD647D424DE939900150AE6 /* LaunchScreen.storyboard */,
@@ -233,7 +239,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4DADEAA724E67FF9006317D2 /* LoginViewController.swift in Sources */,
 				4DD647CE24DE939500150AE6 /* ViewController.swift in Sources */,
+				4DADEAA924E69E09006317D2 /* AccountMakeViewController.swift in Sources */,
 				4DADEAA524E64F88006317D2 /* PostData.swift in Sources */,
 				4D69D57B24E3E8F3009E2110 /* DetailController.swift in Sources */,
 				4DE18EDC24E00597001C8820 /* ImageSelectController.swift in Sources */,

@@ -29,29 +29,43 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         
         //表示範囲
         //let span = MKCoordinateSpan (latitudeDelta: 0.05, longitudeDelta: 0.05)
-        self.mapView.showsUserLocation = true
-        self.mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
-        
-        //デリゲート先に自分を設定する。
-        mapView.delegate = self
-        //地図が回転しないようにする。
-        mapView.isRotateEnabled = false
-        // ユーザーの使用許可を確認
-        locationManager.requestWhenInUseAuthorization()
-        // 使用許可に対するステータス
-        let status = CLLocationManager.authorizationStatus()
-        if status == .authorizedWhenInUse {
-            // delegateを設定
-            locationManager.delegate = self
-            // 測位精度の設定
-            //locationManager.desiredAccuracy = locationAccuracy[1]
-            // アップデートする距離半径(m)
-            locationManager.distanceFilter = 5
-            // 位置情報の取得を開始
-            locationManager.startUpdatingLocation()
+        if Auth.auth().currentUser == nil {
+        }else{
+            self.mapView.showsUserLocation = true
+            self.mapView.userTrackingMode = MKUserTrackingMode.followWithHeading
+            
+            //デリゲート先に自分を設定する。
+            mapView.delegate = self
+            //地図が回転しないようにする。
+            mapView.isRotateEnabled = false
+            // ユーザーの使用許可を確認
+            locationManager.requestWhenInUseAuthorization()
+            // 使用許可に対するステータス
+            let status = CLLocationManager.authorizationStatus()
+            if status == .authorizedWhenInUse {
+                // delegateを設定
+                locationManager.delegate = self
+                // 測位精度の設定
+                //locationManager.desiredAccuracy = locationAccuracy[1]
+                // アップデートする距離半径(m)
+                locationManager.distanceFilter = 5
+                // 位置情報の取得を開始
+                locationManager.startUpdatingLocation()
+            }
+            
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        // currentUserがnilならログインしていない
+        if Auth.auth().currentUser == nil {
+            // ログインしていないときの処理
+            let loginViewController = self.storyboard?.instantiateViewController(withIdentifier: "Login")
+            self.present(loginViewController!, animated: true, completion: nil)
+        }
+    }
     /*override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
      // セグエのポップオーバー接続先を取得
      let popoverCtrl = segue.destination.popoverPresentationController

@@ -15,8 +15,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3m6hl2" translatesAutoresizingMaskIntoConstraints="NO" id="g3h-Db-RRz">
-                                <rect key="frame" x="82" y="144" width="250" height="68"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="h22b3" translatesAutoresizingMaskIntoConstraints="NO" id="g3h-Db-RRz">
+                                <rect key="frame" x="82" y="104" width="250" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="B3y-DQ-Lx8"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="QDr-Eg-EtX"/>
@@ -30,17 +30,17 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿型写真スポット共有アプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d61-Tg-rlR">
-                                <rect key="frame" x="109" y="212" width="196" height="14"/>
+                                <rect key="frame" x="109" y="172" width="196" height="14"/>
                                 <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" red="0.89803921568627454" green="1" blue="0.90196078431372551" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="d61-Tg-rlR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Q8-jd-M7n"/>
                             <constraint firstItem="d61-Tg-rlR" firstAttribute="top" secondItem="g3h-Db-RRz" secondAttribute="bottom" id="5EA-e9-tYT"/>
-                            <constraint firstItem="g3h-Db-RRz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="9aK-ce-zjR"/>
+                            <constraint firstItem="g3h-Db-RRz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="9aK-ce-zjR"/>
                             <constraint firstItem="VHt-qe-FyV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="A3s-Bf-Rgw"/>
                             <constraint firstItem="VHt-qe-FyV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Uln-bN-6KG"/>
                             <constraint firstItem="g3h-Db-RRz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jy8-Ab-QQN"/>
@@ -55,6 +55,6 @@
     </scenes>
     <resources>
         <image name="2000130" width="1600" height="1060"/>
-        <image name="3m6hl2" width="286" height="68"/>
+        <image name="h22b3" width="286" height="68"/>
     </resources>
 </document>
