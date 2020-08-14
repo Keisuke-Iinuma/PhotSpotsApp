@@ -15,33 +15,35 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="v93oo" translatesAutoresizingMaskIntoConstraints="NO" id="c0R-M3-SpI">
-                                <rect key="frame" x="57" y="164" width="300" height="67"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3m6hl2" translatesAutoresizingMaskIntoConstraints="NO" id="g3h-Db-RRz">
+                                <rect key="frame" x="82" y="144" width="250" height="68"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="300" id="01p-qr-gKC"/>
+                                    <constraint firstAttribute="width" constant="250" id="B3y-DQ-Lx8"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20" id="QDr-Eg-EtX"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿型写真スポット共有アプリ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzH-CA-r9p">
-                                <rect key="frame" x="116" y="231" width="182" height="13"/>
-                                <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="13"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2000130" translatesAutoresizingMaskIntoConstraints="NO" id="VHt-qe-FyV">
+                                <rect key="frame" x="57" y="298" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="85K-QE-but"/>
+                                    <constraint firstAttribute="width" constant="300" id="ECC-sy-8Pr"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="投稿型写真スポット共有アプリ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d61-Tg-rlR">
+                                <rect key="frame" x="109" y="212" width="196" height="14"/>
+                                <fontDescription key="fontDescription" name="HiraginoSans-W3" family="Hiragino Sans" pointSize="14"/>
                                 <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="053920" translatesAutoresizingMaskIntoConstraints="NO" id="P4k-7O-nEw">
-                                <rect key="frame" x="-43" y="74" width="500" height="597"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="500" id="Os0-Nn-CeN"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="c0R-M3-SpI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="MDx-aR-31d"/>
-                            <constraint firstItem="AzH-CA-r9p" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="T9L-Dt-iPF"/>
-                            <constraint firstItem="P4k-7O-nEw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="YbJ-pb-T5P"/>
-                            <constraint firstItem="P4k-7O-nEw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="fzK-qp-r3Z"/>
-                            <constraint firstItem="c0R-M3-SpI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="120" id="hua-N1-rKg"/>
-                            <constraint firstItem="AzH-CA-r9p" firstAttribute="top" secondItem="c0R-M3-SpI" secondAttribute="bottom" id="lzH-JM-cqb"/>
+                            <constraint firstItem="d61-Tg-rlR" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="2Q8-jd-M7n"/>
+                            <constraint firstItem="d61-Tg-rlR" firstAttribute="top" secondItem="g3h-Db-RRz" secondAttribute="bottom" id="5EA-e9-tYT"/>
+                            <constraint firstItem="g3h-Db-RRz" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="9aK-ce-zjR"/>
+                            <constraint firstItem="VHt-qe-FyV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="A3s-Bf-Rgw"/>
+                            <constraint firstItem="VHt-qe-FyV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Uln-bN-6KG"/>
+                            <constraint firstItem="g3h-Db-RRz" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="jy8-Ab-QQN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -52,7 +54,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="053920" width="842" height="597"/>
-        <image name="v93oo" width="431" height="67"/>
+        <image name="2000130" width="1600" height="1060"/>
+        <image name="3m6hl2" width="286" height="68"/>
     </resources>
 </document>

@@ -9,6 +9,7 @@
 import UIKit
 import MapKit
 import CoreLocation
+import Firebase
 
 class ViewController: UIViewController , CLLocationManagerDelegate {
     
@@ -21,7 +22,6 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
     var pinView:MKPinAnnotationView!
     var sendText:String = ""
     var sendImage:UIImage!
-    //var sendImage = UIImage()
     let annotation = MKPointAnnotation()
     
     override func viewDidLoad() {
@@ -52,6 +52,24 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
         }
     }
     
+    /*override func prepare (for segue: UIStoryboardSegue, sender: Any?) {
+     // セグエのポップオーバー接続先を取得
+     let popoverCtrl = segue.destination.popoverPresentationController
+     // 呼び出し元がUIButtonの場合
+     if sender is UIButton {
+     // タップされたボタンの領域を取得
+     popoverCtrl?.sourceRect = (sender as! UIButton).bounds
+     }
+     // デリゲートを自分自身に設定
+     popoverCtrl?.delegate = self
+     }
+     
+     // 表示スタイルの設定
+     func adaptivePresentationStyle(for controller: UIPresentationController, traitCollection: UITraitCollection) -> UIModalPresentationStyle {
+     // .noneを設定することで、設定したサイズでポップオーバーされる
+     return .none
+     
+     }*/
     
     @IBAction func unwind(_ segue: UIStoryboardSegue) {
         // 他の画面から segue を使って戻ってきた時に呼ばれる
@@ -66,7 +84,8 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
     }
 }
 
-extension ViewController: MKMapViewDelegate {
+
+extension ViewController: MKMapViewDelegate ,UIPopoverPresentationControllerDelegate{
     //アノテーションビューを返すメソッド
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         if annotation is MKUserLocation {
@@ -85,10 +104,11 @@ extension ViewController: MKMapViewDelegate {
             let image = sendImage
             // UIImageView 初期化
             let imageView = UIImageView(image:image)
-            imageView.frame = CGRect(x: 0, y: 0, width: 300, height: 30)
-            pinView?.detailCalloutAccessoryView = imageView
-            
-            let rightButton = UIButton(type: .infoLight)
+            imageView.frame = CGRect(x: 0, y: 0, width: 30, height: 30)
+            //pinView?.detailCalloutAccessoryView = imageView
+            pinView?.rightCalloutAccessoryView = imageView
+            //吹き出しの右側に配置するボタンを定義
+            let rightButton = UIButton(type: .infoLight)        /*このaddTarget(_:action:for:)メソッドが、青い線を引っ張ってActionを設定する代わりになります。addTargetの第一引数に selfを設定することで、自分自身(ViewController)を呼び出し対象とし、第二引数(action:)の #selectorで指定したメソッドが呼び出すメソッドとなる。 #selector内で指定されている didClickDetailDisclosuren(for: .touchUpInside)は、メソッド名が rightButtonで、第一引数の外部引数名は省略(_)、第二引数の外部引数名はforEvent:を指定して呼び出すメソッドであることを意味しています。この場合、第一引数にはタップされたUIButtonのインスタンスが格納され、第二引数にはUIEvent型のタップイベントが格納されます。タップイベントの中には、ボタンをタップした時の画面上の座標位置などが格納されています。*/
             rightButton.addTarget(self, action: #selector(didClickDetailDisclosure), for: .touchUpInside)
             pinView?.rightCalloutAccessoryView = rightButton
             imageView.contentMode = .scaleAspectFit
@@ -100,35 +120,54 @@ extension ViewController: MKMapViewDelegate {
         return pinView
     }
     
+    // @objc func showPopover(_ sender: UIBarButtonItem) {
     @objc func didClickDetailDisclosure(button: UIButton) {
-        print("tap")
-        let detailcontroller = DetailController()
-        present(detailcontroller, animated: true, completion: nil)
         
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let viewcontroller = storyboard.instantiateViewController(
+            withIdentifier: "locationDetail")
+        
+        viewcontroller.modalPresentationStyle = .popover
+        viewcontroller.popoverPresentationController?.sourceView = button
+        viewcontroller.popoverPresentationController?.delegate = self
+        viewcontroller.preferredContentSize = CGSize(width: 400, height: 600)
+        //passthroughViews: [UIView]
+        /*let height = yourDataArray.count * Int(popOverViewController.tableView.rowHeight)
+         popOverViewController.preferredContentSize = CGSize(width: 300, height: height)*/
+        // Present the view controller (in a popover).
+        self.present(viewcontroller, animated: true) {
+        }
+    }
+    
+    /*func adaptivePresentationStyleForPresentationController(controller: UIPresentationController!) -> UIModalPresentationStyle {
+     // Return no adaptive presentation style, use default presentation behaviour
+     return .none
+     }*/
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
     
     private func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, rightcalloutAccessoryControlTapped control: UIButton) {
     }
 }
 
-/*private func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, rightcalloutAccessoryControlTapped control: UIButton) {
+//もしポップオーバーに拘るのであれば下記を有効にする。
+/*class MyPopoverBackgroundView: UIPopoverBackgroundView {
  
- let viewController = DetailController() //popoverで表示するViewController
- viewController.modalPresentationStyle = .popover
- viewController.preferredContentSize = viewController.view.frame.size
- 
- let presentationController = viewController.popoverPresentationController
- presentationController?.delegate = self
- presentationController?.permittedArrowDirections = .up
- //presentationController?.UIButton = sender
- 
- present(viewController, animated: true, completion: nil)
+ //ポップオーバーのコンテンツ部分のインセット
+ override static func contentViewInsets() -> UIEdgeInsets{
+ return .zero
  }
+ //底辺の矢印の三角形の幅
+ override static func arrowBase() -> CGFloat{
+ return 10
  }
- 
- extension ViewController: UIPopoverPresentationControllerDelegate {
- func adaptivePresentationStyle(for controller: UIPresentationController,
- traitCollection: UITraitCollection) -> UIModalPresentationStyle {
- return .none
+ //矢印の基部から先端までの高さ
+ override static func arrowHeight() -> CGFloat{
+ return 10
+ }
  }*/
 

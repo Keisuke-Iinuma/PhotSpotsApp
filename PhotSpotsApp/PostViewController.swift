@@ -49,6 +49,7 @@ class PostViewController: UIViewController , UITextFieldDelegate {
             SVProgressHUD.showSuccess(withStatus: "投稿しました")
             // 投稿処理が完了したので先頭画面に戻る
             UIApplication.shared.windows.first{ $0.isKeyWindow }?.rootViewController?.dismiss(animated: true, completion: nil)
+            
         }
     }
     
@@ -77,6 +78,11 @@ class PostViewController: UIViewController , UITextFieldDelegate {
         return true
     }
     
+    //func handlePostButton(button: UIButton) {
+    
+    
+    
+    //}
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         textField.resignFirstResponder()
     }
@@ -86,7 +92,7 @@ class PostViewController: UIViewController , UITextFieldDelegate {
         let ViewController:ViewController = segue.destination as! ViewController
         
         ViewController.sendText = self.textField.text!
-        ViewController.sendImage = self.image
+        //DetailController.sendImage = self.image
         
     }
     

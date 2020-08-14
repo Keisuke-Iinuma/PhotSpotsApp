@@ -41,6 +41,15 @@ class ImageSelectController: UIViewController, UIImagePickerControllerDelegate, 
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        /*// 元のバックのビューは、とりあえず透明にして見えなくする
+        view.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0)
+        // UIVisualEffectViewを生成する
+        let visualEffectView = UIVisualEffectView(frame: view.frame)
+        // エフェクトの種類を設定
+        visualEffectView.effect = UIBlurEffect(style: .light)
+        // UIVisualEffectViewを他のビューの下に挿入する
+        view.insertSubview(visualEffectView, at: 0)*/
     }
     
     // 写真を撮影/選択したときに呼ばれるメソッド
@@ -79,6 +88,7 @@ class ImageSelectController: UIViewController, UIImagePickerControllerDelegate, 
         // ImageSelectViewController画面を閉じてタブ画面に戻る
         self.presentingViewController?.dismiss(animated: true, completion: nil)
     }
+    
     
     
     /*
