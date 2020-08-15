@@ -107,7 +107,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="q2v-ak-BBg"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ZtL-6O-foG"/>
                     <connections>
                         <outlet property="displayNameTextField" destination="IBX-cU-e6k" id="0P4-yO-nL4"/>
                         <outlet property="mailAddressTextField" destination="HgJ-OB-JrW" id="X0o-Dz-PGj"/>
@@ -401,7 +400,7 @@
         <!--Image Select Controller-->
         <scene sceneID="3HC-om-YO6">
             <objects>
-                <viewController id="bxd-V7-949" customClass="ImageSelectController" customModule="PhotSpotsApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Image" id="bxd-V7-949" customClass="ImageSelectController" customModule="PhotSpotsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qpg-bn-pTb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

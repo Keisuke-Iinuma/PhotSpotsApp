@@ -8,8 +8,12 @@
 
 import UIKit
 import CLImageEditor
+import CoreLocation
 
-class ImageSelectController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLImageEditorDelegate {
+class ImageSelectController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLImageEditorDelegate,CLLocationManagerDelegate {
+    
+    var center1 = CLLocationDegrees()
+    var center2 = CLLocationDegrees()
     
     @IBAction func handleCameraButton(_ sender: Any) {
         // カメラを指定してピッカーを開く
@@ -80,6 +84,8 @@ class ImageSelectController: UIViewController, UIImagePickerControllerDelegate, 
         // 投稿画面を開く
         let postViewController = self.storyboard?.instantiateViewController(withIdentifier: "Post") as! PostViewController
         postViewController.image = image!
+        postViewController.center1 = center1
+        postViewController.center2 = center2
         editor.present(postViewController, animated: true, completion: nil)
     }
     
