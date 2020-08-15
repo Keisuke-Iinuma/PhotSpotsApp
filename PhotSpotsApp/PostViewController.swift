@@ -9,12 +9,20 @@
 import UIKit
 import MapKit
 import Firebase
+import CoreLocation
 import SVProgressHUD
 
-class PostViewController: UIViewController , UITextFieldDelegate {
-    
+//class PostViewController: UIViewController , UITextFieldDelegate {
+
+class PostViewController: UIViewController , UITextFieldDelegate, CLLocationManagerDelegate {
+
     var image: UIImage!
-    let annotation = MKPointAnnotation()
+    
+    let centerCoordinate = CLLocationCoordinate2D()
+    //ViewControllerの@IBAction func unwind内のcenterを取得したい
+    
+    var center1 = CLLocationDegrees()
+    var center2 = CLLocationDegrees()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -46,7 +54,9 @@ class PostViewController: UIViewController , UITextFieldDelegate {
                 "name": name!,
                 "caption": self.textField.text!,
                 "date": FieldValue.serverTimestamp(),
-                "annotaion": MKPointAnnotation()
+                "annotaionLat": self.center1,
+                "annotaionLon": self.center2
+
                 ] as [String : Any]
             postRef.setData(postDic)
             // HUDで投稿完了を表示する
