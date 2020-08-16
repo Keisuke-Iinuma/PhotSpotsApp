@@ -15,14 +15,17 @@ import SVProgressHUD
 //class PostViewController: UIViewController , UITextFieldDelegate {
 
 class PostViewController: UIViewController , UITextFieldDelegate, CLLocationManagerDelegate {
-
+    
     var image: UIImage!
     
     let centerCoordinate = CLLocationCoordinate2D()
     //ViewControllerの@IBAction func unwind内のcenterを取得したい
     
-    var center1 = CLLocationDegrees()
-    var center2 = CLLocationDegrees()
+    var centerX = CLLocationDegrees()
+    var centerY = CLLocationDegrees()
+
+    //var center1 = CLLocationDegrees()
+    //var center2 = CLLocationDegrees()
     
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var textField: UITextField!
@@ -54,9 +57,18 @@ class PostViewController: UIViewController , UITextFieldDelegate, CLLocationMana
                 "name": name!,
                 "caption": self.textField.text!,
                 "date": FieldValue.serverTimestamp(),
-                "annotaionLat": self.center1,
-                "annotaionLon": self.center2
+                "latitude": self.centerX,
+                "longitude": self.centerY
 
+            // FireStoreに投稿データを保存する
+            /*let name = Auth.auth().currentUser?.displayName
+            let postDic = [
+                "name": name!,
+                "caption": self.textField.text!,
+                "date": FieldValue.serverTimestamp(),
+                "annotaionLat": self.center1,
+                "annotaionLon": self.center2*/
+                
                 ] as [String : Any]
             postRef.setData(postDic)
             // HUDで投稿完了を表示する

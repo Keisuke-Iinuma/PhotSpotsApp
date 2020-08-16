@@ -99,15 +99,31 @@ class ViewController: UIViewController , CLLocationManagerDelegate {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "Image" {
-            let postView = segue.destination as! ImageSelectController
-            let centerPoint = mapView.centerCoordinate
-            //let centerPoint = center
-            let centerLat:Double = centerPoint.latitude
-            let centerLon:Double = centerPoint.longitude
-            postView.center1 = centerLat
-            postView.center2 = centerLon
+        if segue.identifier == "ImageSelectController" {
+            let postView = (segue.destination as! ImageSelectController)
+            let centerLat:CLLocationDegrees = self.mapView.centerCoordinate.latitude
+            let centerLon:CLLocationDegrees = self.mapView.centerCoordinate.longitude
+            
+            print("ViewController centerLat : \(centerLat)")
+            print("ViewController centerLon : \(centerLon)")
+
+            //print(centerLon)
+            //print("PostViewController center : \(self.center)")
+            //self.CLLocationCoordinate2D coord = CLLocationCoordinate2DMake(
+            //centerPoint.centerCoordinate.latitude, centerPoint.centerCoordinate.longitude);
+            postView.centerLat = CLLocationDegrees()
         }
+        
+   /*override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+       if segue.identifier == "Image" {
+           let postView = segue.destination as! ImageSelectController
+           let centerPoint = mapView.centerCoordinate
+           let centerLat = centerPoint.latitude
+           let centerLon = centerPoint.longitude
+           postView.center1 = centerLat
+           postView.center2 = centerLon
+       }*/
+       
         
         /*// storyboardのインスタンス取得
          let storyboard: UIStoryboard = self.storyboard!
